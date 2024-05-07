@@ -15,6 +15,9 @@ export const envs = {
     mongoURI: process.env.MONGO_URI,
     twilioAccountSid: process.env.TWILIO_ACCOUNT_SID,
     twilioAuthToken: process.env.TWILIO_AUTH_TOKEN,
+    AwsSESHost: process.env.AWS_SES_HOST,
+    AwsSESUser: process.env.AWS_SES_USER,
+    AwsSESPassword: process.env.AWS_SES_PASSWORD,
 };
 
 if (envs.modoTest && envs.environment !== 'local_development') {
