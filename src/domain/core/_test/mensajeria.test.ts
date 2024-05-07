@@ -39,7 +39,7 @@ describe('CRUD - Mensajeria', () => {
     const listaId = ['000000000000000000000000'];
 
     // Obtener lista de mensajeria pack
-    const lista = await services.core.mensajeriaPack.obtenerListaPorIds(listaId);
+    const lista = await services.core.mensajeria.obtenerListaPorIds(listaId);
 
     // Si no existe ningun profesional, verificar
     if (!lista.length) {

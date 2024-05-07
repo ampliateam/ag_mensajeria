@@ -3,7 +3,6 @@ import { envs } from "./envs";
 const constantes = {
     codigoServicioPrincipal: 'ag_mensajeria',
     nombreStore: {
-        configMensajeriaProfesional: 'ConfigMensajeriaProfesional',
         mensajeria: 'Mensajerias',
         mensajeriaPack: 'MensajeriaPacks',
         parametroSistema: 'ParametrosSistema',
@@ -16,7 +15,6 @@ const constantes = {
 };
 
 if (envs.modoTest) {
-    constantes.nombreStore.configMensajeriaProfesional += '_test';
     constantes.nombreStore.mensajeria += '_test';
     constantes.nombreStore.mensajeriaPack += '_test';
     constantes.nombreStore.parametroSistema += '_test';
