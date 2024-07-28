@@ -4,7 +4,7 @@ import {
     BuscarMensajeriaDTO,
     ActualizarMensajeriaDTO
 } from '../dto';
-import * as repository from '../repository';
+import * as repository from '../repository/mongodb';
 
 export const crear = async (dto: CrearMensajeriaDTO): Promise<IMensajeria> => {
     return await repository.crud.crear(dto);

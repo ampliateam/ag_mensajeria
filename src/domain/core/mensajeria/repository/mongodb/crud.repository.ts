@@ -1,5 +1,5 @@
 import { IMensajeria } from "@global/models/interfaces";
-import { ActualizarMensajeriaDTO, BuscarMensajeriaDTO, CrearMensajeriaDTO } from "../dto";
+import { ActualizarMensajeriaDTO, BuscarMensajeriaDTO, CrearMensajeriaDTO } from "../../dto";
 import { MensajeriaModel } from "@domain/_connections/mongodb";
 import { mongoToMensajeria } from "@domain/_helpers";
 
