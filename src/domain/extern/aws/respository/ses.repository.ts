@@ -1,6 +1,6 @@
+import nodemailer from 'nodemailer';
 import { envs } from '@global/configs/envs';
 import { EnviarCorreoDTO } from '../dto';
-import nodemailer from 'nodemailer';
 
 export const enviarCorreo = async (dto: EnviarCorreoDTO) => {
   const transporter = nodemailer.createTransport({
@@ -19,7 +19,7 @@ export const enviarCorreo = async (dto: EnviarCorreoDTO) => {
     from: dto.de,
     to: dto.para,
     subject: dto.asunto,
-    html: `${dto.cuerpo}`,
+    html: dto.cuerpo,
   });
 
   return sended;
