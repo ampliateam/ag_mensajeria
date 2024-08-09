@@ -1,19 +1,14 @@
 ## Valores del .env
 ```
-ENVIRONMENT=local_development
-DOCKER_PORT_EXTERNO=7000
+ID_DEV_AMPLIA=NNNNNNNPP
+CODIGO_USUARIO_EXTERNO=ag_mensajeria
+CONTRASENA_USUARIO_EXTERNO=ag_mensajeria_123
+DOCKER_CONTAINER_NAME=ag_mensajeria_local
+DOCKER_IMAGE=ag_mensajeria_local
+DOCKER_PORT_EXTERNO=7003
 DOCKER_PORT_INTERNO=8080
-CODIGO_USUARIO_EXTERNO=ag_usuario
-CONTRASENA_USUARIO_EXTERNO=ag_usuario_123
-DOCKER_CONTAINER_NAME=ag_usuario_local
-DOCKER_IMAGE=ag_usuario_local
-```
-
-## Posibles valores en los archivos: 
-global/configs/credentials/firebase
-```
-"local_development" => firebase-admin-personal.json
-"development"       => firebase-admin-dev.json
-"testing"           => firebase-admin-test.json
-"production"        => firebase-admin-prod.json
+ENVIRONMENT=personal
+MONGO_URI=mongodb://admin:password@127.0.0.1:27019/ag_mensajeria?authSource=admin
+TWILIO_ACCOUNT_SID=XXXXXX
+TWILIO_AUTH_TOKEN=XXXXXX
 ```
