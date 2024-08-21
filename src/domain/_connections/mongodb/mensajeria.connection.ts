@@ -1,10 +1,10 @@
-import { Schema, Types, model } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import { constants } from '@global/configs/constants';
 
 // Guardar el valor por defecto de cada campo aqui
 const defaultValue = {
-    remitente: { id: '', tipo: '' },
-    receptor: { id: '', tipo: '' },
+    remitente: { _id: '', tipo: '' },
+    receptor: { _id: '', tipo: '' },
     estado: 'pendiente',
     fechaEnvio: null,
     fechaCreacion: Date.now,
@@ -18,18 +18,6 @@ const MensajeriaSchema = new Schema({
     estado: { type: String, required: false, default: defaultValue.estado },
     fechaEnvio: { type: Date, required: false, default: defaultValue.fechaEnvio },
     fechaCreacion: { type: Date, required: false, default: defaultValue.fechaCreacion },
-}, {
-    toJSON: { virtuals: true },
-    toObject: { virtuals: true },
-    versionKey: false,
-});
-
-// Duplicate the ID field.
-MensajeriaSchema.virtual('id').set(function(v: string){
-    this._id = new Types.ObjectId(v);
-});
-MensajeriaSchema.virtual('id').get(function(){
-    return this._id.toHexString();
-});
+}, { versionKey: false });
 
 export const MensajeriaModel = model(constants.nombreStore.mensajeria, MensajeriaSchema);

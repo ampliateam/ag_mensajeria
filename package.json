@@ -12,6 +12,7 @@
   },
   "main": "dist/index.js",
   "dependencies": {
+    "ag_mensajeria": "file:",
     "axios": "^1.6.2",
     "class-validator": "^0.14.1",
     "cors": "^2.8.5",

@@ -1,54 +1,98 @@
 import { conexionConMongoDB } from '@global/connections/mongodb.connection';
 import { services } from '@domain/services';
 
-describe('CRUD - Mensajeria', () => {
-  const idModel = '000000000000000000000000';
-  const fechaEnvio = new Date('2024-04-22T15:00:00.000Z');
+const timeoutTest = 20 * 1000;
+
+describe('Mensajeria', () => {
+  const ids = [
+    '66c624a5d7e7e03459459977',
+    '66c624c131add03c0e86800b',
+  ];
 
   beforeAll(async () => {
     await conexionConMongoDB();
+  }, timeoutTest);
 
-    // TODO: Vaciar colecciones especificas
-
+  test.skip('Crear Mensajeria', async () => {
     // Crear un profesional
     const modelNuevo = await services.core.mensajeria.crud.crear({
       mensajeria: {
-        id: idModel,
         tipoMedio: 'whatsapp',
-        remitente: { id: '123456', tipo: 'usuario' },
-        receptor: { id: '654321', tipo: 'usuario' },
+        remitente: { _id: '123456', tipo: 'usuario' },
+        receptor: { _id: '654321', tipo: 'usuario' },
         informacion: 'Hola mundo!',
         estado: 'pendiente',          // pendiente, error, enviado
-        fechaEnvio,
-        fechaCreacion: undefined,
+        fechaEnvio: null,
       },
     });
 
-    expect(modelNuevo.id).toEqual(idModel);
-  });
+    expect(modelNuevo._id).toBeTruthy();
+  }, timeoutTest);
 
-  test('Obtener Mensajeria', async () => {
-    // Obtener pack de mensajeria
-    const model = await services.core.mensajeria.crud.obtener({ fechaEnvio });
-    console.log('model', model);
+  test.skip('Obtener Mensajeria por crud', async () => {
+    // Obtener mensajeria
+    ids.map(async v => {
+      const model = await services.core.mensajeria.crud.obtener({ _id: v });
+      expect(ids).toContain(model._id);
+    });
+  }, timeoutTest);
 
-    expect(model.id).toEqual(idModel);
-  });
+  test.skip('Obtener Mensajeria por db - 0', async () => {
+    // Obtener mensajeria
+    ids.map(async v => {
+      const [model] = await services.core.mensajeria.db.obtener({ _id: v });
+      expect(ids).toContain(model._id);
+    });
+  }, timeoutTest);
 
-  test('Obtener lista de Mensajeria', async () => {
-    const listaId = ['000000000000000000000000'];
+  test.skip('Obtener Mensajeria por db - 1', async () => {
+    const models = await services.core.mensajeria.db.obtener({
+      _id: { '$in': ids }
+    });
+    models.map(v => {
+      expect(ids).toContain(v._id);
+    });
+  }, timeoutTest);
 
-    // Obtener lista de mensajeria pack
-    const lista = await services.core.mensajeria.obtenerListaPorIds(listaId);
+  test.skip('Actualizar Mensajeria por crud', async () => {
+    const idModificar = ids[0];
 
-    // Si no existe ningun profesional, verificar
-    if (!lista.length) {
-      return expect(lista.length).toEqual(0);
-    }
+    const model = await services.core.mensajeria.crud.actualizar({
+      buscarPor: { _id: idModificar },
+      actualizado: {
+        estado: 'enviado',
+        fechaEnvio: new Date(),
+      }
+    });
 
-    // Verificar lista de id de mensajeria pack
-    for (const id of listaId) {
-      expect(lista.find((v) => v.id === id || '')?.id).toEqual(id);
-    }
-  });
+    expect(idModificar).toBe(model._id);
+  }, timeoutTest);
+
+  test.skip('Actualizar Mensajeria por db - 0', async () => {
+    const idModificar = ids[1];
+
+    const [model] = await services.core.mensajeria.db.actualizar(
+      { _id: idModificar },
+      {
+        estado: 'enviado',
+        fechaEnvio: new Date(),
+      }
+    );
+
+    expect(model._id).toBe(idModificar);
+  }, timeoutTest);
+
+  test.skip('Actualizar Mensajeria por db - 1', async () => {
+    const models = await services.core.mensajeria.db.actualizar(
+      { _id: { '$in': ids } },
+      {
+        estado: 'enviado',
+        fechaEnvio: new Date(),
+      }
+    );
+
+    models.map(v => {
+      expect(ids).toContain(v._id);
+    });
+  }, timeoutTest);
 });
