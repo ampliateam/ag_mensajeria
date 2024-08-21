@@ -6,17 +6,17 @@ import {
 } from "@global/models/types";
 
 interface IMensajeriaRemitente {
-    id: string;
+    _id: string;
     tipo: TMensajeriaRemitenteTipo;
 }
 
 interface IMensajeriaReceptor {
-    id: string;
+    _id: string;
     tipo: TMensajeriaReceptorTipo;
 }
 
 export interface IMensajeria {
-    id: string;
+    _id: string;
     tipoMedio: TMensajeriaMedioTipo;
     remitente: IMensajeriaRemitente;
     receptor: IMensajeriaReceptor;
@@ -27,7 +27,7 @@ export interface IMensajeria {
 }
 
 export interface IMensajeriaOpcional {
-    id?: string;
+    _id?: string;
     tipoMedio?: TMensajeriaMedioTipo;
     remitente?: IMensajeriaRemitente;
     receptor?: IMensajeriaReceptor;

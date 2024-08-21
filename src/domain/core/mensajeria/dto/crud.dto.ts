@@ -1,15 +1,11 @@
-import {
-    IMensajeria,
-    IMensajeriaOpcional,
-} from "@global/models/interfaces";
+import { IMensajeriaOpcional } from "@global/models/interfaces";
 
 export interface CrearMensajeriaDTO {
-    mensajeria: IMensajeria;
+    mensajeria: IMensajeriaOpcional;
 }
 
 export interface BuscarMensajeriaDTO {
-    id?: string;
-    fechaEnvio?: Date
+    _id?: string;
 }
 
 export interface ActualizarMensajeriaDTO {
