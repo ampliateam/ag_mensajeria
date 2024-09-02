@@ -1,4 +1,4 @@
-import { IMensajeria } from "@global/models/interfaces";
+import { IConfigMensajeriaProfesional, IMensajeria } from "@global/models/interfaces";
 import { IParametroSistema } from "@domain/_models/interfaces";
 
 const mongoToModel = (mongo: any) => {
@@ -20,4 +20,8 @@ export const mongoToParametroBusqueda = (mongo: any): IParametroSistema => {
 
 export const mongoToMensajeria = (mongo: any): IMensajeria => {
     return mongoToModel(mongo) as IMensajeria;
+}
+
+export const mongoToConfigMensajeriaProfesional = (mongo: any): IConfigMensajeriaProfesional => {
+    return mongoToModel(mongo) as IConfigMensajeriaProfesional;
 }
