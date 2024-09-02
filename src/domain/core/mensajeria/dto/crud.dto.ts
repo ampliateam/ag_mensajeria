@@ -7,8 +7,3 @@ export interface CrearMensajeriaDTO {
 export interface BuscarMensajeriaDTO {
     _id?: string;
 }
-
-export interface ActualizarMensajeriaDTO {
-    buscarPor: BuscarMensajeriaDTO;
-    actualizado: IMensajeriaOpcional;
-}
