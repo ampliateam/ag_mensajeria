@@ -6,7 +6,7 @@ import { testRun } from '../config';
 const describeTest = testRun.configMensajeriaProfesional.crear ? describe : describe.skip;
 describeTest('CRUD - Config mensajeria pack', () => {
   const idUsuario = "123456";
-  const idProfesional = '66cf5e22b731b5cf995445b7';
+  const idProfesional = '66cf5e22b731b5cf99500002';
 
   beforeAll(async () => {
     if (!envs.modoTest) {
@@ -25,33 +25,18 @@ describeTest('CRUD - Config mensajeria pack', () => {
         packMensajeria: {
           correo: {
             totalHistorico: 0,
-            porElemento: {
-              disponible: 0,
-              totalHistorico: 0,
-              utilizadoHistorico: 0,
-            },
+            disponible: 0,
           },
           sms: {
             totalHistorico: 0,
-            porElemento: {
-              disponible: 0,
-              totalHistorico: 0,
-              utilizadoHistorico: 0,
-            },
+            disponible: 0,
           },
           whatsapp: {
             totalHistorico: 0,
-            porElemento: {
-              disponible: 0,
-              totalHistorico: 0,
-              utilizadoHistorico: 0,
-            },
+            disponible: 0,
           },
         },
-        recordatorioManualParaCliente: {
-          habilitado: false,
-          tipoMedio: 'correo',
-        },
+        recordatorioManualParaCliente: false,
       },
     });
 

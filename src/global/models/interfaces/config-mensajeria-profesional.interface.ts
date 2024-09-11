@@ -1,31 +1,17 @@
-import { TMensajeriaMedioTipo } from '@global/models/types';
-
 // PACK
 interface IPackMensajeria {
   correo: {
     totalHistorico: number,
-    porElemento: IPackMensajeriaPorElemento,
+    disponible: number,
   };
   sms: {
     totalHistorico: number,
-    porElemento: IPackMensajeriaPorElemento,
+    disponible: number,
   };
   whatsapp: {
     totalHistorico: number,
-    porElemento: IPackMensajeriaPorElemento,
+    disponible: number,
   };
-}
-
-interface IPackMensajeriaPorElemento {
-  disponible: number;
-  totalHistorico: number;
-  utilizadoHistorico: number;
-}
-
-// Recordatorios manuales para cliente
-interface IRecordatorioManualParaCliente {
-  habilitado: boolean;
-  tipoMedio: TMensajeriaMedioTipo | 'todos';
 }
 
 // Los mensajes por correo ya vienen con el plan basico
@@ -34,7 +20,7 @@ export interface IConfigMensajeriaProfesional {
   idUsuario: string;
   idProfesional: string;
   packMensajeria: IPackMensajeria;
-  recordatorioManualParaCliente: IRecordatorioManualParaCliente;
+  recordatorioManualParaCliente: boolean;
   fechaCreacion: Date;
 }
 
@@ -43,7 +29,7 @@ export interface IConfigMensajeriaProfesionalOpcional {
   idUsuario?: string;
   idProfesional?: string;
   packMensajeria?: IPackMensajeria;
-  recordatorioManualParaCliente?: IRecordatorioManualParaCliente;
+  recordatorioManualParaCliente?: boolean;
   fechaCreacion?: Date;
 }
 

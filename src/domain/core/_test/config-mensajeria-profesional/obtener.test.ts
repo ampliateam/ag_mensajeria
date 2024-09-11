@@ -6,9 +6,9 @@ import { testRun } from '../config';
 const describeTest = testRun.configMensajeriaProfesional.obtener ? describe : describe.skip;
 describeTest('CRUD - Config mensajeria pack', () => {
   const ids = [
-    '66d0874ef0175832a8f573ec',
-    '66d0886769e2aa835c8055b4',
-    '66d089718df44ff4e1a0e631',
+    '66e1b252aaa6aa3e8c905f8f',
+    '66e1b2922177e21f4fc872a7',
+    '66e1b2f729255a6fd9eab7ac',
   ];
 
   beforeAll(async () => {

@@ -6,33 +6,18 @@ const defaultValue = {
   packMensajeria: {
     correo: {
       totalHistorico: 0,
-      porElemento: {
-        disponible: 0,
-        totalHistorico: 0,
-        utilizadoHistorico: 0,
-      },
+      disponible: 0,
     },
     sms: {
       totalHistorico: 0,
-      porElemento: {
-        disponible: 0,
-        totalHistorico: 0,
-        utilizadoHistorico: 0,
-      },
+      disponible: 0,
     },
     whatsapp: {
       totalHistorico: 0,
-      porElemento: {
-        disponible: 0,
-        totalHistorico: 0,
-        utilizadoHistorico: 0,
-      },
+      disponible: 0,
     }
   },
-  recordatorioManualParaCliente: {
-    habilitado: false,
-    tipoMedio: 'correo',
-  },
+  recordatorioManualParaCliente: false,
   fechaCreacion: Date.now,
 };
 
@@ -46,7 +31,7 @@ const ConfigMensajeriaProfesionalSchema = new Schema(
       default: defaultValue.packMensajeria,
     },
     recordatorioManualParaCliente: {
-      type: Object,
+      type: Boolean,
       required: false,
       default: defaultValue.recordatorioManualParaCliente,
     },

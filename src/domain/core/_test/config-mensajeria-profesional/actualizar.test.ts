@@ -6,9 +6,9 @@ import { testRun } from '../config';
 const describeTest = testRun.configMensajeriaProfesional.actualizar ? describe : describe.skip;
 describeTest('CRUD - Config mensajeria pack', () => {
   const ids = [
-    '66d0874ef0175832a8f573ec',
-    '66d0886769e2aa835c8055b4',
-    '66d089718df44ff4e1a0e631',
+    '66e1b252aaa6aa3e8c905f8f',
+    '66e1b2922177e21f4fc872a7',
+    '66e1b2f729255a6fd9eab7ac',
   ];
 
   beforeAll(async () => {
@@ -19,36 +19,39 @@ describeTest('CRUD - Config mensajeria pack', () => {
     await conexionConMongoDB();
   });
 
-  test.skip('actualizar | config-mensajeria-profesional | crud', async () => {
-    const _id = ids[1];
+  test('actualizar | config-mensajeria-profesional | crud', async () => {
+    const _id = ids[0];
+    const recordatorioManualParaCliente = true;
     
     // Obtener pack de mensajeria
     const model = await services.core.configMensajeriaProfesional.crud.actualizar({
       buscarPor: { _id },
-      actualizado: {
-        recordatorioManualParaCliente: {
-          habilitado: false,
-          tipoMedio: 'todos'
-        }
-      }
+      actualizado: { recordatorioManualParaCliente }
     });
 
-    expect(model._id).toEqual(_id);
+    expect(_id).toEqual(model._id);
+    expect(recordatorioManualParaCliente).toEqual(model.recordatorioManualParaCliente);
   });
 
   test('actualizar | config-mensajeria-profesional | db-0', async () => {
     const _id = ids[1];
+    const aumento = -1;
+
+    const model = await services.core.configMensajeriaProfesional.crud.obtener({ _id });
 
     // Obtener pack de mensajeria
-    const [model] = await services.core.configMensajeriaProfesional.db.actualizar(
-      { _id: _id },
-      {
-        $set: {
-          'recordatorioManualParaCliente.habilitado': true
+    const [modelModificado] = await services.core.configMensajeriaProfesional.db.actualizar(
+      { _id },
+      { 
+        $inc: {
+          'packMensajeria.whatsapp.totalHistorico': aumento,
+          'packMensajeria.whatsapp.disponible': aumento,
         }
       }
     );
 
-    expect(model._id).toEqual(_id);
+    expect(_id).toEqual(model._id);
+    expect(model.packMensajeria.whatsapp.totalHistorico+aumento).toEqual(modelModificado.packMensajeria.whatsapp.totalHistorico);
+    expect(model.packMensajeria.whatsapp.disponible+aumento).toEqual(modelModificado.packMensajeria.whatsapp.disponible);
   });
 });

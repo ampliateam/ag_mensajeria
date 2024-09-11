@@ -2,7 +2,7 @@ export const testRun = {
   configMensajeriaProfesional: {
     crear: false,
     obtener: false,
-    actualizar: false,
+    actualizar: true,
   },
   mensajeria: {
     crear: false,
