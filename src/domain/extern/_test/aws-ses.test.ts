@@ -4,7 +4,7 @@ describe.skip("AWS SES", () => {
   
   test("Enviar correo", async () => {
     // Obtener ficha
-    await services.extern.aws.enviarCorreo({
+    await services.extern.aws.ses.enviarCorreo({
       asunto: "Hola",
       cuerpo: "Hola",
       de: "agendaliateam@gmail.com",

@@ -1,2 +1,2 @@
-export * from './ses.service';
-export * from './sns.service';
+export * as ses from './ses.service';
+export * as sns from './sns.service';

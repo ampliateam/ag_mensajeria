@@ -8,7 +8,10 @@ DOCKER_IMAGE=ag_mensajeria_local
 DOCKER_PORT_EXTERNO=7003
 DOCKER_PORT_INTERNO=8080
 ENVIRONMENT=personal
-MONGO_URI=mongodb://admin:password@127.0.0.1:27019/ag_mensajeria?authSource=admin
+MONGO_URI=mongodb://admin:password@127.0.0.1:27017/ag_mensajeria?authSource=admin
 TWILIO_ACCOUNT_SID=XXXXXX
 TWILIO_AUTH_TOKEN=XXXXXX
+AWS_SES_HOST=
+AWS_SES_USER=
+AWS_SES_PASSWORD=
 ```

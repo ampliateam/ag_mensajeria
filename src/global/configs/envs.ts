@@ -5,6 +5,7 @@ dotenv.config();
 
 export const envs = {
     modoTest: process.env.MODO_TEST === 'true',
+    idDevAmplia: process.env.ID_DEV_AMPLIA,
     codigoUsuarioExterno: process.env.CODIGO_USUARIO_EXTERNO,
     contrasenaUsuarioExterno: process.env.CONTRASENA_USUARIO_EXTERNO,
     dockerContainerName: process.env.DOCKER_CONTAINER_NAME,
