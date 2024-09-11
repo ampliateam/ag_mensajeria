@@ -12,7 +12,7 @@ export const crear = async (dto: CrearConfigMensajeriaProfesionalDTO): Promise<I
     return await obtener({ _id: modelMongoDB._id.toString() });
 }
 
-export const obtener = async (dto: BuscarConfigMensajeriaProfesionalDTO): Promise<IConfigMensajeriaProfesional> => {
+export const obtener = async (dto: BuscarConfigMensajeriaProfesionalDTO): Promise<IConfigMensajeriaProfesional> => {   
     // Proceso de filtracion
     const filtros:any = {};
     if (dto._id) {
