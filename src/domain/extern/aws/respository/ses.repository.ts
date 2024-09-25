@@ -13,7 +13,8 @@ export const enviarCorreo = async (dto: EnviarCorreoDTO) => {
     },
   });
 
-  console.log('Enviando correo (sendEmail)');
+  if(envs.environment === 'personal')
+    console.log('Enviando correo (sendEmail)');
 
   const sended = await transporter.sendMail({
     from: dto.de,

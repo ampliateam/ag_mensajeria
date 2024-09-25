@@ -1,4 +1,4 @@
-import { envs } from "./envs";
+import { envs } from './envs';
 
 const constantes = {
     codigoServicioPrincipal: 'ag_mensajeria',
@@ -15,9 +15,9 @@ const constantes = {
 };
 
 if (envs.modoTest) {
+    // No agregar el de `ParametrosSistema`
     constantes.nombreStore.configMensajeriaProfesional += '_test';
     constantes.nombreStore.mensajeria += '_test';
-    constantes.nombreStore.parametroSistema += '_test';
 }
 
 export const constants = constantes;

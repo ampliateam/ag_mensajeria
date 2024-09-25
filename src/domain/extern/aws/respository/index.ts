@@ -1,2 +1,2 @@
-export * from './ses.repository';
-export * from './sns.repository';
+export * as ses from './ses.repository';
+export * as sns from './sns.repository';

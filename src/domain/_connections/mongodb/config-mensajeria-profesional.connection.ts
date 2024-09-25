@@ -1,7 +1,11 @@
 import { Schema, model } from 'mongoose';
 import { constants } from '@global/configs/constants';
+import { IConfigMensajeriaProfesional } from '@global/models/interfaces';
 
-// Guardar el valor por defecto de cada campo aqui
+// Definir la interfaz para el documento
+interface IConfigMensajeriaProfesionalMongoose extends Document, Omit<IConfigMensajeriaProfesional, '_id'> {};
+
+// Guardar el valor por defecto de cada campo aqui (para los required=false)
 const defaultValue = {
   packMensajeria: {
     correo: {
@@ -21,9 +25,9 @@ const defaultValue = {
   fechaCreacion: Date.now,
 };
 
-const ConfigMensajeriaProfesionalSchema = new Schema(
+// Schema de mongoose
+const ConfigMensajeriaProfesionalSchema = new Schema<IConfigMensajeriaProfesionalMongoose>(
   {
-    idUsuario: { type: String, required: true },
     idProfesional: { type: String, required: true, unique: true },
     packMensajeria: {
       type: Object,
@@ -43,7 +47,7 @@ const ConfigMensajeriaProfesionalSchema = new Schema(
   }, { versionKey: false }
 );
 
-export const ConfigMensajeriaProfesionalModel = model(
+export const ConfigMensajeriaProfesionalModel = model<IConfigMensajeriaProfesionalMongoose>(
   constants.nombreStore.configMensajeriaProfesional,
   ConfigMensajeriaProfesionalSchema
 );

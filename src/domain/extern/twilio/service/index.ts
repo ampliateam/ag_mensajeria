@@ -1,1 +1,1 @@
-export * from './whatsapp.service';
+export * as whatsapp from './whatsapp.service';

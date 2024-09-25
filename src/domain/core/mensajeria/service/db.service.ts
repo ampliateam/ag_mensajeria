@@ -1,5 +1,5 @@
-import { IMensajeria } from "@global/models/interfaces";
-import * as repository from "../repository/mongodb";
+import { IMensajeria } from '@global/models/interfaces';
+import * as repository from '../repository/mongodb';
 
 export const obtener = async (dto: any): Promise<IMensajeria[]> => {
   return await repository.db.obtener(dto);

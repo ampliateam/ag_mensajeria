@@ -14,7 +14,7 @@ const MensajeriaSchema = new Schema({
     tipoMedio: { type: String, required: true },
     remitente: { type: Object, required: true, default: defaultValue.remitente },
     receptor: { type: Object, required: true, default: defaultValue.receptor },
-    informacion: { type: String, required: true },
+    mensaje: { type: String, required: true },
     estado: { type: String, required: false, default: defaultValue.estado },
     fechaEnvio: { type: Date, required: false, default: defaultValue.fechaEnvio },
     fechaCreacion: { type: Date, required: false, default: defaultValue.fechaCreacion },

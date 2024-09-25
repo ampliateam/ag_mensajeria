@@ -1,6 +1,6 @@
 import { EnviarWhatsAppDTO } from '../dto';
-import * as repository from '../respository';
+import { whatsapp } from '../respository';
 
-export const enviarMensajeWhatsApp = (dto: EnviarWhatsAppDTO) => {
-    return repository.whatsapp.enviarMensajeWhatsApp(dto);
-}
+export const enviarMensaje = (dto: EnviarWhatsAppDTO) => {
+    return whatsapp.enviarMensaje(dto);
+};

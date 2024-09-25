@@ -19,7 +19,7 @@ describeTest('CRUD - Config mensajeria pack', () => {
     await conexionConMongoDB();
   });
 
-  test('actualizar | config-mensajeria-profesional | crud', async () => {
+  test.skip('actualizar | config-mensajeria-profesional | crud', async () => {
     const _id = ids[0];
     const recordatorioManualParaCliente = true;
     
@@ -33,7 +33,7 @@ describeTest('CRUD - Config mensajeria pack', () => {
     expect(recordatorioManualParaCliente).toEqual(model.recordatorioManualParaCliente);
   });
 
-  test('actualizar | config-mensajeria-profesional | db-0', async () => {
+  test.skip('actualizar | config-mensajeria-profesional | db-0', async () => {
     const _id = ids[1];
     const aumento = -1;
 

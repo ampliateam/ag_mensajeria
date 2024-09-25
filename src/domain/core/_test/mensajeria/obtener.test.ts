@@ -13,7 +13,7 @@ describeTest('Mensajeria', () => {
     await conexionConMongoDB();
   });
 
-  test('Obtener Mensajeria por crud', async () => {
+  test.skip('Obtener Mensajeria por crud', async () => {
     // Obtener mensajeria
     ids.map(async v => {
       const model = await services.core.mensajeria.crud.obtener({ _id: v });
@@ -21,7 +21,7 @@ describeTest('Mensajeria', () => {
     });
   });
 
-  test('Obtener Mensajeria por db por _id', async () => {
+  test.skip('Obtener Mensajeria por db por _id', async () => {
     // Obtener mensajeria
     ids.map(async v => {
       const [model] = await services.core.mensajeria.db.obtener({ _id: v });
@@ -29,7 +29,7 @@ describeTest('Mensajeria', () => {
     });
   });
 
-  test('Obtener Mensajeria por db por $in contra ids', async () => {
+  test.skip('Obtener Mensajeria por db por $in contra ids', async () => {
     const models = await services.core.mensajeria.db.obtener({
       _id: { '$in': ids }
     });

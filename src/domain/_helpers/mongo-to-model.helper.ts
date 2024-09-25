@@ -1,5 +1,5 @@
-import { IConfigMensajeriaProfesional, IMensajeria } from "@global/models/interfaces";
-import { IParametroSistema } from "@domain/_models/interfaces";
+import { IConfigMensajeriaProfesional, IMensajeria } from '@global/models/interfaces';
+import { IParametroSistema } from '@domain/_models/interfaces';
 
 const mongoToModel = (mongo: any) => {
     if (!mongo) return null;
