@@ -4,7 +4,7 @@ import {
     ActualizarConfigMensajeriaProfesionalDTO,
     BuscarConfigMensajeriaProfesionalDTO,
     CrearConfigMensajeriaProfesionalDTO
-} from "../dto";
+} from '../dto';
 
 export const crear = async (dto: CrearConfigMensajeriaProfesionalDTO): Promise<IConfigMensajeriaProfesional> => {
     return await repository.crud.crear(dto);

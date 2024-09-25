@@ -1,4 +1,4 @@
-import { EnviarSmsDTO } from "../dto";
+import { EnviarSmsDTO } from '../dto';
 
 export const enviarSMS = async (dto: EnviarSmsDTO) => {
     return {
@@ -7,4 +7,4 @@ export const enviarSMS = async (dto: EnviarSmsDTO) => {
         mensaje: 'Mensaje de SMS enviado correctamente.',
         dto,
     };
-}
+};

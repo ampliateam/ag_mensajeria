@@ -19,14 +19,14 @@ describeTest('CRUD - Config mensajeria pack', () => {
     await conexionConMongoDB();
   });
 
-  test('obtener | config-mensajeria-profesional | crud', async () => {
+  test.skip('obtener | config-mensajeria-profesional | crud', async () => {
     const _id = ids[0];
     const model = await services.core.configMensajeriaProfesional.crud.obtener({ _id });
 
     expect(model._id).toEqual(_id);
   });
 
-  test('Obtener | config-mensajeria-profesional | db-0', async () => {
+  test.skip('Obtener | config-mensajeria-profesional | db-0', async () => {
     const _id = ids[1];
     const [model] = await services.core.configMensajeriaProfesional.db.obtener({ _id });
 

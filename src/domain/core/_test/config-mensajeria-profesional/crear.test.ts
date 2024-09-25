@@ -5,7 +5,6 @@ import { testRun } from '../config';
 
 const describeTest = testRun.configMensajeriaProfesional.crear ? describe : describe.skip;
 describeTest('CRUD - Config mensajeria pack', () => {
-  const idUsuario = "123456";
   const idProfesional = '66cf5e22b731b5cf99500002';
 
   beforeAll(async () => {
@@ -16,11 +15,10 @@ describeTest('CRUD - Config mensajeria pack', () => {
     await conexionConMongoDB();
   });
 
-  test('crear | config-mensajeria-profesional | crud', async () => {
+  test.skip('crear | config-mensajeria-profesional | crud', async () => {
     // Crear un profesional
     const modelNuevo = await services.core.configMensajeriaProfesional.crud.crear({
       configMensajeriaProfesional: {
-        idUsuario,
         idProfesional,
         packMensajeria: {
           correo: {

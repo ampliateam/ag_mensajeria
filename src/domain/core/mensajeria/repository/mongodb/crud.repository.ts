@@ -1,7 +1,7 @@
-import { IMensajeria } from "@global/models/interfaces";
-import { BuscarMensajeriaDTO, CrearMensajeriaDTO } from "../../dto";
-import { MensajeriaModel } from "@domain/_connections/mongodb";
-import { mongoToMensajeria } from "@domain/_helpers";
+import { IMensajeria } from '@global/models/interfaces';
+import { BuscarMensajeriaDTO, CrearMensajeriaDTO } from '../../dto';
+import { MensajeriaModel } from '@domain/_connections/mongodb';
+import { mongoToMensajeria } from '@domain/_helpers';
 
 export const crear = async (dto: CrearMensajeriaDTO): Promise<IMensajeria> => {
     const modelMongoDB = await MensajeriaModel.create(dto.mensajeria);

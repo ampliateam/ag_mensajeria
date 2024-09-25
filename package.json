@@ -12,6 +12,7 @@
   },
   "main": "dist/index.js",
   "dependencies": {
+    "@types/nodemailer": "^6.4.15",
     "ag_mensajeria": "file:",
     "axios": "^1.6.2",
     "class-validator": "^0.14.1",

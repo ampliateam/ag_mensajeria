@@ -1,4 +1,4 @@
-import { IMensajeriaOpcional } from "@global/models/interfaces";
+import { IMensajeriaOpcional } from '@global/models/interfaces';
 
 export interface CrearMensajeriaDTO {
     mensajeria: IMensajeriaOpcional;

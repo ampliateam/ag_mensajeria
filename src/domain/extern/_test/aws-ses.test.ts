@@ -1,14 +1,13 @@
-import { services } from "@domain/services";
+import { services } from '@domain/services';
 
-describe.skip("AWS SES", () => {
+describe('AWS SES', () => {
   
-  test("Enviar correo", async () => {
-    // Obtener ficha
+  test.skip('Enviar correo', async () => {
     await services.extern.aws.ses.enviarCorreo({
-      asunto: "Hola",
-      cuerpo: "Hola",
-      de: "agendaliateam@gmail.com",
-      para: "agendaliateam@gmail.com"
+      asunto: 'Hola',
+      cuerpo: 'Hola',
+      de: 'agendaliateam@gmail.com',
+      para: 'agendaliateam@gmail.com'
     });
 
     expect(true).toEqual(true);

@@ -3,7 +3,7 @@ import {
     TMensajeriaRemitenteTipo,
     TMensajeriaReceptorTipo,
     TMensajeriaEstado
-} from "@global/models/types";
+} from '@global/models/types';
 
 interface IMensajeriaRemitente {
     _id: string;
@@ -20,7 +20,7 @@ export interface IMensajeria {
     tipoMedio: TMensajeriaMedioTipo;
     remitente: IMensajeriaRemitente;
     receptor: IMensajeriaReceptor;
-    informacion: string;
+    mensaje: string;
     estado: TMensajeriaEstado;          // pendiente, error, enviado
     fechaEnvio: Date | null;
     fechaCreacion: Date;
@@ -31,7 +31,7 @@ export interface IMensajeriaOpcional {
     tipoMedio?: TMensajeriaMedioTipo;
     remitente?: IMensajeriaRemitente;
     receptor?: IMensajeriaReceptor;
-    informacion?: string;
+    mensaje?: string;
     estado?: TMensajeriaEstado;          // pendiente, error, enviado
     fechaEnvio?: Date | null;
     fechaCreacion?: Date;

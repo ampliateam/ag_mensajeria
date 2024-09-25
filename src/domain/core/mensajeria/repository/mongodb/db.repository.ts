@@ -1,7 +1,7 @@
-import { MensajeriaModel } from "@domain/_connections/mongodb";
-import { mongoToMensajeria } from "@domain/_helpers";
+import { MensajeriaModel } from '@domain/_connections/mongodb';
+import { mongoToMensajeria } from '@domain/_helpers';
 
-// Tener cuidado mientras se use el plan de mongodb "pago-por-uso"
+// Tener cuidado mientras se use el plan de mongodb 'pago-por-uso'
 export const obtener = async (filtros: any) => {
   const listaModelMongo = await MensajeriaModel.find(filtros);
   return listaModelMongo.map(v => mongoToMensajeria(v));

@@ -1,7 +1,7 @@
-import { ConfigMensajeriaProfesionalModel } from "@domain/_connections/mongodb";
-import { mongoToConfigMensajeriaProfesional } from "@domain/_helpers";
+import { ConfigMensajeriaProfesionalModel } from '@domain/_connections/mongodb';
+import { mongoToConfigMensajeriaProfesional } from '@domain/_helpers';
 
-// Tener cuidado mientras se use el plan de mongodb "pago-por-uso"
+// Tener cuidado mientras se use el plan de mongodb 'pago-por-uso'
 export const obtener = async (filtros: any) => {
   const listaModelMongo = await ConfigMensajeriaProfesionalModel.find(filtros);
   return listaModelMongo.map(v => mongoToConfigMensajeriaProfesional(v));
