@@ -1,4 +1,4 @@
-import { IConfigMensajeriaProfesionalOpcional } from '@global/models/interfaces';
+import { IConfigMensajeriaProfesionalOpcional } from '@global/models/ag_mensajeria';
 
 export interface CrearConfigMensajeriaProfesionalDTO {
   configMensajeriaProfesional: IConfigMensajeriaProfesionalOpcional;

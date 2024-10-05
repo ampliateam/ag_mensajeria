@@ -1,4 +1,4 @@
-import { IMensajeria } from '@global/models/interfaces';
+import { IMensajeria } from '@global/models/ag_mensajeria';
 import * as repository from '../repository/mongodb';
 
 export const obtener = async (dto: any): Promise<IMensajeria[]> => {

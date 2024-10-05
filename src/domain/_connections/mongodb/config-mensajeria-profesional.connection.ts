@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 import { constants } from '@global/configs/constants';
-import { IConfigMensajeriaProfesional } from '@global/models/interfaces';
+import { IConfigMensajeriaProfesional } from '@global/models/ag_mensajeria';
 
 // Definir la interfaz para el documento
 interface IConfigMensajeriaProfesionalMongoose extends Document, Omit<IConfigMensajeriaProfesional, '_id'> {};

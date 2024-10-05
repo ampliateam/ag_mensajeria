@@ -1,4 +1,4 @@
-import { IMensajeria } from '@global/models/interfaces';
+import { IMensajeria } from '@global/models/ag_mensajeria';
 import {
     CrearMensajeriaDTO,
     BuscarMensajeriaDTO,

@@ -3,7 +3,7 @@ import {
     TMensajeriaRemitenteTipo,
     TMensajeriaReceptorTipo,
     TMensajeriaEstado
-} from '@global/models/types';
+} from '@global/models/ag_mensajeria';
 
 interface IMensajeriaRemitente {
     _id: string;
